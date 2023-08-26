@@ -41,16 +41,16 @@ function changeTabPanel(e) {
 	const tabContainer = targetTab.parentNode;
 	const mainContainer = tabContainer.parentNode;
 
-	// tabs.forEach((tab) => {
-	// 	tab.setAttribute('tabindex', -1);
-	// });
+	tabs.forEach((tab) => {
+		tab.setAttribute('tabindex', -1);
+	});
 
 	tabContainer
 		.querySelector('[aria-selected="true"]')
 		.setAttribute('aria-selected', false);
 
 	targetTab.setAttribute('aria-selected', true);
-	// targetTab.setAttribute('tabindex', '0');
+	targetTab.setAttribute('tabindex', '0');
 
 	hideContent(mainContainer, '[role="tabpanel"]');
 	showContent(mainContainer, targetPanel);
